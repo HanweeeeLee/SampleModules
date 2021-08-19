@@ -18,6 +18,9 @@
 		78FB60A026CDD9C400200203 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB609F26CDD9C400200203 /* APIManager.swift */; };
 		78FB60A226CDDC6C00200203 /* SearchModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB60A126CDDC6C00200203 /* SearchModule.swift */; };
 		78FB60A426CDE73A00200203 /* StubAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB60A326CDE73A00200203 /* StubAPIManager.swift */; };
+		78FB60A626CDF09C00200203 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB60A526CDF09C00200203 /* Presenter.swift */; };
+		78FB60A826CDF0A400200203 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB60A726CDF0A400200203 /* Model.swift */; };
+		78FB60AA26CDF62700200203 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB60A926CDF62700200203 /* Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		78FB609F26CDD9C400200203 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		78FB60A126CDDC6C00200203 /* SearchModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModule.swift; sourceTree = "<group>"; };
 		78FB60A326CDE73A00200203 /* StubAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubAPIManager.swift; sourceTree = "<group>"; };
+		78FB60A526CDF09C00200203 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		78FB60A726CDF0A400200203 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		78FB60A926CDF62700200203 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,11 +116,14 @@
 				78FB606F26CDD9AC00200203 /* AppDelegate.swift */,
 				78FB607126CDD9AC00200203 /* SceneDelegate.swift */,
 				78FB607326CDD9AC00200203 /* ViewController.swift */,
+				78FB60A526CDF09C00200203 /* Presenter.swift */,
+				78FB60A726CDF0A400200203 /* Model.swift */,
 				78FB607526CDD9AC00200203 /* Main.storyboard */,
 				78FB607826CDD9AD00200203 /* Assets.xcassets */,
 				78FB607A26CDD9AD00200203 /* LaunchScreen.storyboard */,
 				78FB607D26CDD9AD00200203 /* Info.plist */,
 				78FB60A326CDE73A00200203 /* StubAPIManager.swift */,
+				78FB60A926CDF62700200203 /* Util.swift */,
 			);
 			path = SearchModule;
 			sourceTree = "<group>";
@@ -268,11 +277,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				78FB60A426CDE73A00200203 /* StubAPIManager.swift in Sources */,
+				78FB60AA26CDF62700200203 /* Util.swift in Sources */,
+				78FB60A626CDF09C00200203 /* Presenter.swift in Sources */,
 				78FB60A026CDD9C400200203 /* APIManager.swift in Sources */,
 				78FB607426CDD9AC00200203 /* ViewController.swift in Sources */,
 				78FB607026CDD9AC00200203 /* AppDelegate.swift in Sources */,
 				78FB60A226CDDC6C00200203 /* SearchModule.swift in Sources */,
 				78FB607226CDD9AC00200203 /* SceneDelegate.swift in Sources */,
+				78FB60A826CDF0A400200203 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

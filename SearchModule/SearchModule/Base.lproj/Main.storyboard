@@ -23,17 +23,32 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jrx-sz-bfs">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="HsC-jS-EQ1">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jrx-sz-bfs" firstAttribute="top" secondItem="0DX-ck-lJX" secondAttribute="bottom" id="4tZ-SE-zS1"/>
+                            <constraint firstItem="HsC-jS-EQ1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AHS-ho-thJ"/>
+                            <constraint firstItem="jrx-sz-bfs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GLV-bM-4eY"/>
                             <constraint firstAttribute="trailing" secondItem="0DX-ck-lJX" secondAttribute="trailing" id="Pue-It-6ng"/>
                             <constraint firstItem="0DX-ck-lJX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZxC-ds-sAJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jrx-sz-bfs" secondAttribute="bottom" id="eMu-GV-NUd"/>
+                            <constraint firstItem="HsC-jS-EQ1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gGC-em-IGO"/>
                             <constraint firstItem="0DX-ck-lJX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lC2-5L-WX0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jrx-sz-bfs" secondAttribute="trailing" id="q9P-dQ-G6c"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicator" destination="HsC-jS-EQ1" id="Z4e-KX-jyr"/>
                         <outlet property="searchBar" destination="0DX-ck-lJX" id="v8g-78-6B1"/>
+                        <outlet property="tableView" destination="jrx-sz-bfs" id="P9u-VC-yRe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
