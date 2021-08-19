@@ -26,13 +26,14 @@ class Model: ModelProtocol {
     
     public func getRepoModelList(keyword: String, page: UInt, complition: @escaping () -> Void, failureHandler: @escaping (Error) -> Void) {
         self.searchModule.search(keyword: keyword, page: 1, completeHandler: { responseData in
-            print(String(data: responseData, encoding: .utf8) ?? "-")
             let arr = Util.convertToDictionary(text: String(data: responseData, encoding: .utf8)!)
             self.searchResults.removeAll()
-            let items = arr!["items"] as! [Any]
-            for item in items {
-                let modelObj: RepoModel = RepoModel(name: (item as! [String: Any])["name"] as! String)
-                self.searchResults.append(modelObj)
+            if arr != nil && arr!["items"] != nil {
+                let items = arr!["items"] as! [Any]
+                for item in items {
+                    let modelObj: RepoModel = RepoModel(name: (item as! [String: Any])["name"] as! String)
+                    self.searchResults.append(modelObj)
+                }
             }
             complition()
             

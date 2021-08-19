@@ -41,10 +41,25 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("검색: \(String(describing: self.searchBar.text))")
-        self.loadingIndicator.isHidden = false
-        self.loadingIndicator.startAnimating()
-        self.presenter?.search(keyword: self.searchBar.text!, complition: {
+//        print("검색: \(String(describing: self.searchBar.text))")
+//        self.loadingIndicator.isHidden = false
+//        self.loadingIndicator.startAnimating()
+//        self.presenter?.search(keyword: self.searchBar.text!, complition: {
+//            DispatchQueue.main.async { [weak self] in
+//                self?.loadingIndicator.stopAnimating()
+//                self?.loadingIndicator.isHidden = true
+//                self?.tableView.reloadData()
+//            }
+//        })
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("검색: \(String(describing: searchText))")
+        if self.loadingIndicator.isHidden {
+            self.loadingIndicator.isHidden = false
+            self.loadingIndicator.startAnimating()
+        }
+        self.presenter?.search(keyword: searchText, complition: {
             DispatchQueue.main.async { [weak self] in
                 self?.loadingIndicator.stopAnimating()
                 self?.loadingIndicator.isHidden = true

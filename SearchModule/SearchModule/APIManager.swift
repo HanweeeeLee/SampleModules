@@ -8,7 +8,7 @@
 import UIKit
 
 protocol APIManagerProtocol: AnyObject {
-    func query(url: String, function: APIManager.ApiManagerRequestFunction, header: [String: Any]?, param:[String:Any]?, requestType: APIManager.ApiRequestResponseType, responseType: APIManager.ApiRequestResponseType, timeout: UInt, completeHanlder: @escaping (Data) -> (), failureHandler: @escaping (Error) -> ()) -> URLSessionTask?
+    @discardableResult func query(url: String, function: APIManager.ApiManagerRequestFunction, header: [String: Any]?, param:[String:Any]?, requestType: APIManager.ApiRequestResponseType, responseType: APIManager.ApiRequestResponseType, timeout: UInt, completeHanlder: @escaping (Data) -> (), failureHandler: @escaping (Error) -> ()) -> URLSessionTask?
 }
 
 class APIManager: APIManagerProtocol {
@@ -26,7 +26,7 @@ class APIManager: APIManagerProtocol {
         case html
     }
     
-    func query(url: String, function: ApiManagerRequestFunction = .post, header: [String: Any]? = nil, param:[String:Any]? = nil, requestType: ApiRequestResponseType = .json, responseType: ApiRequestResponseType = .json, timeout: UInt  = 10, completeHanlder: @escaping (Data) -> (), failureHandler: @escaping (Error) -> ()) -> URLSessionTask? {
+    @discardableResult func query(url: String, function: ApiManagerRequestFunction = .post, header: [String: Any]? = nil, param:[String:Any]? = nil, requestType: ApiRequestResponseType = .json, responseType: ApiRequestResponseType = .json, timeout: UInt  = 10, completeHanlder: @escaping (Data) -> (), failureHandler: @escaping (Error) -> ()) -> URLSessionTask? {
         guard let realUrl = URL(string: url) else {
             // 처리하고싶으면 에러처리
             return nil

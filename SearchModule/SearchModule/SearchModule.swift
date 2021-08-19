@@ -20,9 +20,18 @@ public class SearchModule {
         let pagingParamKey: String?
     }
     
+    private struct QueryParam {
+        let keyword: String
+        let page: UInt?
+        let completeHandler: (Data) -> Void
+        let failureHandler: (Error) -> Void
+    }
+    
     // MARK: private property
     private let apiManager: APIManagerProtocol
     private let option: APIManagerOption
+    
+    private var queryTimer: Timer?
     
     // MARK: public property
     
@@ -35,21 +44,44 @@ public class SearchModule {
     
     // MARK: private func
     
+//    @objc func fire(timer: Timer)
+//    {
+//        if  let userInfo = timer.userInfo as? [String: Int],
+//            let score = userInfo["score"] {
+//            print("You scored \(score) points!")
+//        }
+//    }
+    
+    @objc private func query() {
+        guard let searchInfo = self.queryTimer?.userInfo as? QueryParam else {
+            self.queryTimer = nil
+            return
+        }
+        print("쿼리 :\(searchInfo.keyword)")
+        var newParam = self.option.param
+        if newParam != nil {
+            newParam![self.option.searchParamKey] = searchInfo.keyword
+            if self.option.pagingParamKey != nil {
+                newParam![self.option.pagingParamKey!] = searchInfo.page
+            }
+        }
+        self.apiManager.query(url: self.option.url, function: self.option.function, header: self.option.header, param: newParam, requestType: self.option.requestType, responseType: self.option.responseType, timeout: 10, completeHanlder: {  responseData in
+            searchInfo.completeHandler(responseData)
+        }, failureHandler: { err in
+            searchInfo.failureHandler(err)
+        })
+        self.queryTimer = nil
+    }
+    
     // MARK: public func
     
     public func search(keyword: String, page: UInt, completeHandler: @escaping (Data) -> Void, failureHandler: @escaping (Error) -> Void) {
-        var newParam = self.option.param
-        if newParam != nil {
-            newParam![self.option.searchParamKey] = keyword
-            if self.option.pagingParamKey != nil {
-                newParam![self.option.pagingParamKey!] = page
-            }
+        print("대기")
+        if let timer = self.queryTimer {
+            timer.invalidate()
+            self.queryTimer = nil
         }
-        let task = self.apiManager.query(url: self.option.url, function: self.option.function, header: self.option.header, param: newParam, requestType: self.option.requestType, responseType: self.option.responseType, timeout: 10, completeHanlder: {  responseData in
-            completeHandler(responseData)
-        }, failureHandler: { err in
-            failureHandler(err)
-        })
+        self.queryTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(query), userInfo: QueryParam(keyword: keyword, page: page, completeHandler: completeHandler, failureHandler: failureHandler), repeats: false)
     }
     
     
