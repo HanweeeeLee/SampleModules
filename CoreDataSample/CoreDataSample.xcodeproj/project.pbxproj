@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78875DC426CF302F002C5591 /* PersonPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78875DC326CF302F002C5591 /* PersonPersistenceManager.swift */; };
+		78875DC626CF3491002C5591 /* PersistenceManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78875DC526CF3491002C5591 /* PersistenceManagerProtocol.swift */; };
 		78C9EBDC26CF2783003EAFEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C9EBDB26CF2783003EAFEC /* AppDelegate.swift */; };
 		78C9EBDE26CF2783003EAFEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C9EBDD26CF2783003EAFEC /* SceneDelegate.swift */; };
 		78C9EBE026CF2783003EAFEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C9EBDF26CF2783003EAFEC /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78875DC326CF302F002C5591 /* PersonPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonPersistenceManager.swift; sourceTree = "<group>"; };
+		78875DC526CF3491002C5591 /* PersistenceManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManagerProtocol.swift; sourceTree = "<group>"; };
 		78C9EBD826CF2783003EAFEC /* CoreDataSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C9EBDB26CF2783003EAFEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78C9EBDD26CF2783003EAFEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				78C9EBF226CF27A7003EAFEC /* Model.xcdatamodeld */,
 				78C9EBF526CF2B6D003EAFEC /* Contact+CoreDataClass.swift */,
 				78C9EBF626CF2B6D003EAFEC /* Contact+CoreDataProperties.swift */,
+				78875DC526CF3491002C5591 /* PersistenceManagerProtocol.swift */,
+				78875DC326CF302F002C5591 /* PersonPersistenceManager.swift */,
 			);
 			path = CoreDataSample;
 			sourceTree = "<group>";
@@ -152,6 +158,8 @@
 				78C9EBE626CF2783003EAFEC /* CoreDataSample.xcdatamodeld in Sources */,
 				78C9EBE026CF2783003EAFEC /* ViewController.swift in Sources */,
 				78C9EBF826CF2B6D003EAFEC /* Contact+CoreDataProperties.swift in Sources */,
+				78875DC426CF302F002C5591 /* PersonPersistenceManager.swift in Sources */,
+				78875DC626CF3491002C5591 /* PersistenceManagerProtocol.swift in Sources */,
 				78C9EBF426CF27A7003EAFEC /* Model.xcdatamodeld in Sources */,
 				78C9EBDC26CF2783003EAFEC /* AppDelegate.swift in Sources */,
 				78C9EBF726CF2B6D003EAFEC /* Contact+CoreDataClass.swift in Sources */,
